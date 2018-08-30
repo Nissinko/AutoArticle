@@ -42,9 +42,9 @@ driver.get(loginurl)
 
 # ID/PASSを入力
 id = driver.find_element_by_id("txt_email_login")
-id.send_keys("cyattky@gmail.com")
+id.send_keys("hoge")
 password = driver.find_element_by_id("txt_password")
-password.send_keys("Cyattky!01b")
+password.send_keys("hoge")
 
 time.sleep(1)
 
