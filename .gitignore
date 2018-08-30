@@ -1,3 +1,5 @@
 .idea/
 *.xlsx
 *.docx
+*.pyc
+.data/
