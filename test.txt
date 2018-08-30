@@ -1,0 +1,12 @@
+idKeyword = Number
+App.blockUI({animate: true, target: _divResult + idKeyword});
+var filterParam = new Array();
+filterParam[filterParam.length] = new param("idKeyword", idKeyword);
+var result = $.ajax({
+    url: 'getSuggestKeywordNetworkResult',
+    type: "POST",
+    data: filterParam,
+    async: false
+}).responseText;
+
+return result

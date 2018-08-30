@@ -1,0 +1,25 @@
+idKeyword = 
+App.blockUI({animate: true, target: _divResult + idKeyword});
+var filterParam = new Array();
+var a;
+filterParam[filterParam.length] = new param("idKeyword", idKeyword);
+$.ajax({
+    url: 'getSuggestKeywordNetworkResult',
+    type: "POST",
+    data: filterParam,
+    success: function (response) {
+        if (!response.startsWith("null") && response.length > 0) {
+            showResultSuggestNetwork(response, idKeyword, _divResult, functionLocation);
+            setTimeout(function () {
+                drawWaterMark();
+            }, 1000);
+
+        }
+    },
+    error: function (e) {
+        showNotifications('Error get list content!', "error");
+        App.unblockUI(_divResult + idKeyword);
+    }
+});
+
+return a
